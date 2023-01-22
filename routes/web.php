@@ -23,6 +23,6 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/posts', function () {
-    return view('posts.author.index');
+Route::get('/other', function () {
+    return view('other');
 });
