@@ -11,24 +11,29 @@
 |
 */
 
-Route::get('/', function () {
-    $name = '<span class="text-danger">Fawwaz</span>';
-    $tasks = ['Kuliah', 'Buat Tutorial', 'Tidur'];
+Route::get('/', 'HomeController@index');
 
-    return view('welcome', [
-        'name' => $name,
-        'tasks' => $tasks
-    ]);
-});
+Route::get('/about', 'PageController@about');
+Route::get('/contact', 'PageController@contact');
 
-Route::get('/about', function () {
-    return view('about');
-});
+// Route::get('/', function () {
+//     $name = '<span class="text-danger">Fawwaz</span>';
+//     $tasks = ['Kuliah', 'Buat Tutorial', 'Tidur'];
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+//     return view('welcome', [
+//         'name' => $name,
+//         'tasks' => $tasks
+//     ]);
+// });
 
-Route::get('/other', function () {
-    return view('other');
-});
+// Route::get('/about', function () {
+//     return view('about');
+// });
+
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
+
+// Route::get('/other', function () {
+//     return view('other');
+// });
