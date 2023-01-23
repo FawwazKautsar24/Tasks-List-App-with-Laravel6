@@ -12,7 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $name = '<span class="text-danger">Fawwaz</span>';
+    $tasks = ['Kuliah', 'Buat Tutorial', 'Tidur'];
+
+    return view('welcome', [
+        'name' => $name,
+        'tasks' => $tasks
+    ]);
 });
 
 Route::get('/about', function () {
