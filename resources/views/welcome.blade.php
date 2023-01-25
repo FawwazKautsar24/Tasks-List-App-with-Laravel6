@@ -9,7 +9,7 @@
             $no = 1;
         @endphp
         @foreach ($tasks as $task)
-            {{ $no }} - {{ $task }} <br>
+            {{ $no }} - {{ $task->title }} <br>
             @php ++$no @endphp
         @endforeach
     </div>
