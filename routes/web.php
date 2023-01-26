@@ -13,8 +13,11 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/about', 'PageController@about');
-Route::get('/contact', 'PageController@contact');
+Route::get('tasks', 'TaskController@index');
+Route::post('tasks', 'TaskController@store');
+
+// Route::get('/about', 'PageController@about');
+// Route::get('/contact', 'PageController@contact');
 
 // Route::get('/', function () {
 //     $name = '<span class="text-danger">Fawwaz</span>';

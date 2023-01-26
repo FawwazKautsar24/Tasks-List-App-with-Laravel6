@@ -13,7 +13,7 @@ class HomeController extends Controller
         // $tasks = ['Kuliah', 'Praktik Coding', 'Tidur'];
         // $tasks = DB::table('tasks')->get();
         $tasks = Task::all();
-        dd($tasks);
+        // dd($tasks);
 
         return view('welcome', [
             'name' => $name,
