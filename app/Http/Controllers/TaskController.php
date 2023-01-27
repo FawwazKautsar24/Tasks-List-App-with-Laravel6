@@ -15,10 +15,18 @@ class TaskController extends Controller
 
     public function store()
     {
-        $task = new Task;
-        $task->title = request('title');
-        $task->description = request('description');
-        $task->save();
+        // $task = new Task;
+        // $task->title = request('title');
+        // $task->description = request('description');
+        // $task->save();
+
+        // Task::create([
+        //     'title' => request('title'),
+        //     'description' => request('description'),
+        // ]);
+        
+        $task = request()->all();
+        Task::create($task);
 
         // dd($task);
 
