@@ -38,4 +38,12 @@ class TaskController extends Controller
         // return redirect('/');
         return back();
     }
+
+    // public function show($task)
+    public function show(Task $task)
+    {
+        // $task = Task::where('id', $task)->first();
+        // $task = Task::find($task);
+        return view('tasks.show', compact('task'));
+    }
 }

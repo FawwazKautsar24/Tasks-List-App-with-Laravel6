@@ -3,8 +3,6 @@
 @section('title', 'All Tasks')
 @section('content')
     <div class="container">
-        <h1>Tasks</h1>
-
         <div class="row">
             <div class="col-md-6">
                 <h1>Create a Task</h1>
@@ -30,7 +28,9 @@
                 <hr>
                 <ol style="margin-left: -30px">
                     @foreach ($tasks as $task)
-                        <li>{{ $task->title }}</li>
+                        <li>
+                            <a href="/tasks/{{ $task->id }}">{{ $task->title }}</a>
+                        </li>
                     @endforeach
                 </ol>
             </div>
