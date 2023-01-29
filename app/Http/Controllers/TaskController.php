@@ -25,6 +25,11 @@ class TaskController extends Controller
         //     'description' => request('description'),
         // ]);
         
+        request()->validate([
+            'title' => 'required|min:3',
+            'description' => 'required',
+        ]);
+
         $task = request()->all();
         Task::create($task);
 
