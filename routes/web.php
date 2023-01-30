@@ -16,6 +16,8 @@ Route::get('/', 'HomeController@index');
 Route::get('tasks', 'TaskController@index');
 Route::post('tasks', 'TaskController@store');
 Route::get('tasks/{task}', 'TaskController@show');
+Route::get('tasks/{task}/edit', 'TaskController@edit');
+Route::post('tasks/{task}/edit', 'TaskController@update');
 
 // Route::get('/about', 'PageController@about');
 // Route::get('/contact', 'PageController@contact');
