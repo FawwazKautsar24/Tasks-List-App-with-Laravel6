@@ -25,18 +25,19 @@ class TaskController extends Controller
         //     'description' => request('description'),
         // ]);
         
-        request()->validate([
+        $task = request()->validate([
             'title' => 'required|min:3',
             'description' => 'required',
         ]);
 
-        $task = request()->all();
+        // $task = request()->all();
         Task::create($task);
+        // session()->flash('success', 'Your task was created!');
 
         // dd($task);
 
         // return redirect('/');
-        return back();
+        return back()->with('success', 'Your task was created!');;
     }
 
     // public function show($task)
@@ -54,16 +55,13 @@ class TaskController extends Controller
 
     public function update(Task $task)
     {
-        request()->validate([
+        $attribute = request()->validate([
             'title' => 'required|min:3',
             'description' => 'required',
         ]);
         
-        $task->update([
-            'title' => request('title'),
-            'description' => request('description'),
-        ]);
+        $task->update($attribute);
 
-        return redirect("/tasks/{$task->id}");
+        return redirect("/tasks/{$task->id}")->with('success', 'Your task was updated.');
     }
 }
