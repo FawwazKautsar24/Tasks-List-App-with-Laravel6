@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Task;
+use App\Http\Requests\TaskRequest;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -13,7 +14,7 @@ class TaskController extends Controller
         return view('tasks.index', compact('tasks'));
     }
 
-    public function store()
+    public function store(TaskRequest $attribute)
     {
         // $task = new Task;
         // $task->title = request('title');
@@ -25,13 +26,13 @@ class TaskController extends Controller
         //     'description' => request('description'),
         // ]);
         
-        $task = request()->validate([
-            'title' => 'required|min:3',
-            'description' => 'required',
-        ]);
+        // $task = request()->validate([
+        //     'title' => 'required|min:3',
+        //     'description' => 'required',
+        // ]);
 
         // $task = request()->all();
-        Task::create($task);
+        Task::create($attribute->all());
         // session()->flash('success', 'Your task was created!');
 
         // dd($task);
@@ -53,15 +54,21 @@ class TaskController extends Controller
         return view('tasks.edit', compact('task'));
     }
 
-    public function update(Task $task)
+    public function update(Task $task, TaskRequest $attribute)
     {
-        $attribute = request()->validate([
-            'title' => 'required|min:3',
-            'description' => 'required',
-        ]);
+        // $attribute = request()->validate([
+        //     'title' => 'required|min:3',
+        //     'description' => 'required',
+        // ]);
         
-        $task->update($attribute);
+        $task->update($attribute->all());
 
         return redirect("/tasks/{$task->id}")->with('success', 'Your task was updated.');
+    }
+
+    public function delete(Task $task)
+    {
+        $task->delete();
+        return redirect("/tasks")->with('success', 'Your task was deleted.');
     }
 }

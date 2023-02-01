@@ -10,6 +10,7 @@
 
                 <form action="/tasks/{{ $task->id }}/edit" method="post" autocomplete="off">
                     @csrf
+                    @method('PUT')
                     @include('tasks.partials.form', [
                         'submit_button' => 'Update'
                     ])
