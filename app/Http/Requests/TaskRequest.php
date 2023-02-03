@@ -24,6 +24,7 @@ class TaskRequest extends FormRequest
     public function rules()
     {
         return [
+            'subject_id' => 'required',
             'title' => 'required|min:3',
             'description' => 'required',
         ];

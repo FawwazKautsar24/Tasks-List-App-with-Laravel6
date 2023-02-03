@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <h1>{{ $task->title }}</h1>
+                <h1>{{ $task->title }} - <small>{{ $task->subject->name }}</small></h1>
                 <hr>
                 <div class="task-description">
                     {{ $task->description }}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Task;
+use App\Subject;
 use App\Http\Requests\TaskRequest;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::all();
-        return view('tasks.index', compact('tasks'));
+        $subjects = Subject::all();
+        return view('tasks.index', compact('tasks', 'subjects'));
     }
 
     public function store(TaskRequest $attribute)
@@ -51,7 +53,8 @@ class TaskController extends Controller
 
     public function edit(Task $task)
     {
-        return view('tasks.edit', compact('task'));
+        $subjects = Subject::all();
+        return view('tasks.edit', compact('task', 'subjects'));
     }
 
     public function update(Task $task, TaskRequest $attribute)
