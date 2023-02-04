@@ -20,6 +20,8 @@ Route::get('tasks/{task}/edit', 'TaskController@edit');
 Route::put('tasks/{task}/edit', 'TaskController@update');
 Route::delete('tasks/{task}/delete', 'TaskController@delete');
 
+Route::get('subjects/{subject}', 'SubjectController@show');
+
 // Route::get('/about', 'PageController@about');
 // Route::get('/contact', 'PageController@contact');
 
