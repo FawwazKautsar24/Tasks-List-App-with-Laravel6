@@ -8,5 +8,15 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active"><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a></li>
       <li class="nav-item"><a class="nav-link" href="/tasks">Task</a></li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Subject
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          @foreach ($subjects as $subject)
+            <a href="/subjects/{{ $subject->id }}" class="dropdown-item">{{ $subject->name }}</a>
+          @endforeach
+        </div>
+      </li>
   </div>
 </nav>

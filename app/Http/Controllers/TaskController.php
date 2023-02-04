@@ -12,8 +12,8 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::all();
-        $subjects = Subject::all();
-        return view('tasks.index', compact('tasks', 'subjects'));
+        // $subjects = Subject::all();
+        return view('tasks.index', compact('tasks'));
     }
 
     public function store(TaskRequest $attribute)
@@ -53,8 +53,8 @@ class TaskController extends Controller
 
     public function edit(Task $task)
     {
-        $subjects = Subject::all();
-        return view('tasks.edit', compact('task', 'subjects'));
+        // $subjects = Subject::all();
+        return view('tasks.edit', compact('task'));
     }
 
     public function update(Task $task, TaskRequest $attribute)

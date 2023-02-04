@@ -17,7 +17,7 @@
             </div>
 
             <div class="col-md-6">
-                @include('tasks.partials.block')
+                @include('tasks.partials.sidebar')
             </div>
         </div>
     </div>
