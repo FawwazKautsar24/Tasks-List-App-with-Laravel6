@@ -5,7 +5,7 @@
 </div>
 <div class="form-group">
     <select name="subject_id" id="subject_id" class="form-control{{ $errors->has('subject_id') ? ' is-invalid' : '' }}">
-        <option disabled selected>Pilih Satu</option>
+        <option disabled selected>Pilih Salah Satu</option>
 
         @foreach ($subjects as $subject)
             <option {{ $task->subject_id == $subject->id ? "selected" : "" }} value="{{ $subject->id }}">{{ $subject->name }}</option>
