@@ -7,5 +7,7 @@
         @foreach ($tasks as $task)
             <p><a href="/tasks/{{ $task->id }}">{{ $task->title }}</a></p>
         @endforeach
+
+        {{ $tasks->links() }}
     </div>
 @endsection
