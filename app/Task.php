@@ -14,4 +14,9 @@ class Task extends Model
     {
         return $this->belongsTo(Subject::class);
     }
+
+    public function published()
+    {
+        return $this->created_at->diffForHumans();
+    }
 }
