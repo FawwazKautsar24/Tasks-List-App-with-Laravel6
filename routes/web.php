@@ -21,28 +21,3 @@ Route::put('tasks/{task}/edit', 'TaskController@update');
 Route::delete('tasks/{task}/delete', 'TaskController@delete');
 
 Route::get('subjects/{subject}', 'SubjectController@show');
-
-// Route::get('/about', 'PageController@about');
-// Route::get('/contact', 'PageController@contact');
-
-// Route::get('/', function () {
-//     $name = '<span class="text-danger">Fawwaz</span>';
-//     $tasks = ['Kuliah', 'Buat Tutorial', 'Tidur'];
-
-//     return view('welcome', [
-//         'name' => $name,
-//         'tasks' => $tasks
-//     ]);
-// });
-
-// Route::get('/about', function () {
-//     return view('about');
-// });
-
-// Route::get('/contact', function () {
-//     return view('contact');
-// });
-
-// Route::get('/other', function () {
-//     return view('other');
-// });
